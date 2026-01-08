@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_DWD_WETTERWARNUNGEN</name>
+	<author>Thomas Hunziker</author>
+	<creationDate>2026-01-08</creationDate>
+	<copyright>(C) 2026</copyright>
+	<authorEmail>admin@bakual.net</authorEmail>
+	<authorUrl>https://www.bakual.net</authorUrl>
+	<version>1.0.0</version>
+	<license>https://www.gnu.org/licenses/gpl.html</license>
+	<description>MOD_DWD_WETTERWARNUNGEN_XML_DESCRIPTION</description>
+	<namespace path="/">Bakual\Module\Wetterwarnungen</namespace>
+	<files>
+		<folder>Dispatcher</folder>
+		<folder>Helper</folder>
+		<folder>language</folder>
+		<folder module="mod_dwd_wetterwarnungen">services</folder>
+		<folder>tmpl</folder>
+	</files>
+	<media destination="mod_dwd_wetterwarnungen" folder="media">
+		<folder>css</folder>
+		<folder>js</folder>
+	</media>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" label="MOD_DWD_WETTERWARNUNGEN_BASIC_SETTINGS">
+				<field
+					name="latitude"
+					type="text"
+					default="50.264024"
+					label="MOD_DWD_WETTERWARNUNGEN_LATITUDE_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_LATITUDE_DESC"
+					required="true"
+					filter="float"
+				/>
+
+				<field
+					name="longitude"
+					type="text"
+					default="9.319105"
+					label="MOD_DWD_WETTERWARNUNGEN_LONGITUDE_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_LONGITUDE_DESC"
+					required="true"
+					filter="float"
+				/>
+
+				<field
+					name="locationname"
+					type="text"
+					default="Wächtersbach-Neudorf"
+					label="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_DESC"
+					required="true"
+				/>
+
+				<field
+					name="enable_zoom_control"
+					type="radio"
+					default="1"
+					label="MOD_DWD_WETTERWARNUNGEN_ENABLE_ZOOM_CONTROL_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_ENABLE_ZOOM_CONTROL_DESC"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="zoom"
+					type="range"
+					default="10"
+					label="MOD_DWD_WETTERWARNUNGEN_ZOOM_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_ZOOM_DESC"
+					min="1"
+					max="18"
+					step="1"
+				/>
+
+				<field
+					name="maxzoom"
+					type="range"
+					default="18"
+					label="MOD_DWD_WETTERWARNUNGEN_MAXZOOM_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_MAXZOOM_DESC"
+					min="1"
+					max="20"
+					step="1"
+				/>
+
+				<field
+					name="width"
+					type="text"
+					default="100%"
+					label="MOD_DWD_WETTERWARNUNGEN_WIDTH_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_WIDTH_DESC"
+				/>
+
+				<field
+					name="height"
+					type="text"
+					default="600px"
+					label="MOD_DWD_WETTERWARNUNGEN_HEIGHT_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_HEIGHT_DESC"
+				/>
+
+				<field
+					name="maxwidth"
+					type="text"
+					default="900px"
+					label="MOD_DWD_WETTERWARNUNGEN_MAXWIDTH_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_MAXWIDTH_DESC"
+				/>
+
+				<field
+					name="bordercolor"
+					type="color"
+					default="#824913"
+					label="MOD_DWD_WETTERWARNUNGEN_BORDERCOLOR_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_BORDERCOLOR_DESC"
+				/>
+
+				<field
+					name="borderwidth"
+					type="number"
+					default="3"
+					label="MOD_DWD_WETTERWARNUNGEN_BORDERWIDTH_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_BORDERWIDTH_DESC"
+					validate="number"
+					min="0"
+				/>
+
+				<field
+					name="show_marker"
+					type="radio"
+					default="1"
+					label="MOD_DWD_WETTERWARNUNGEN_SHOW_MARKER_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_SHOW_MARKER_DESC"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="autorefresh"
+					type="radio"
+					default="1"
+					label="MOD_DWD_WETTERWARNUNGEN_AUTOREFRESH_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_AUTOREFRESH_DESC"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="refresh_interval"
+					type="number"
+					default="300"
+					label="MOD_DWD_WETTERWARNUNGEN_REFRESH_INTERVAL_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_REFRESH_INTERVAL_DESC"
+					showon="autorefresh:1"
+					validate="number"
+					min="60"
+					max="3600"
+				/>
+
+				<field
+					name="show_warnings"
+					type="radio"
+					default="1"
+					label="MOD_DWD_WETTERWARNUNGEN_SHOW_WARNINGS_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_SHOW_WARNINGS_DESC"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="opacity_warnings"
+					type="range"
+					default="0.6"
+					label="MOD_DWD_WETTERWARNUNGEN_OPACITY_WARNINGS_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_OPACITY_WARNINGS_DESC"
+					min="0.1"
+					max="1"
+					step="0.1"
+				/>
+
+				<field
+					name="show_communities"
+					type="radio"
+					default="0"
+					label="MOD_DWD_WETTERWARNUNGEN_SHOW_COMMUNITIES_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_SHOW_COMMUNITIES_DESC"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="opacity_communities"
+					type="range"
+					default="0.4"
+					label="MOD_DWD_WETTERWARNUNGEN_OPACITY_COMMUNITIES_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_OPACITY_COMMUNITIES_DESC"
+					min="0.1"
+					max="1"
+					step="0.1"
+				/>
+
+				<field
+					name="enable_dragging"
+					type="radio"
+					default="1"
+					label="MOD_DWD_WETTERWARNUNGEN_ENABLE_DRAGGING_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_ENABLE_DRAGGING_DESC"
+					layout="joomla.form.field.radio.switcher"
+				>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
