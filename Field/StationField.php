@@ -9,8 +9,6 @@
 namespace Bakual\Module\Wetterwarnungen\Site\Field;
 
 use Joomla\CMS\Form\Field\SqlField;
-use Joomla\CMS\Helper\ModuleHelper;
-use Joomla\CMS\HTML\HTMLHelper;
 use Joomla\CMS\Language\Text;
 
 defined('_JEXEC') or die();
@@ -40,7 +38,15 @@ class StationField extends SqlField
 	 */
 	protected function getInput(): string
 	{
-		$wettermodul = ModuleHelper::getModule('mod_dwd_wettermodule');
+		$db     = $this->getDatabase();
+		$prefix = $db->getPrefix();
+		$tables = $db->getTableList();
+
+		if (in_array($prefix . 'dwd_wetter_sites', $tables))
+		{
+			return '<span class="alert alert-warning">' . Text::_('MOD_DWD_WETTERWARNUNGEN_WEATHERMODULE_NOT_FOUND') . '</span>';
+		}
+
 		return parent::getInput();
 	}
 }

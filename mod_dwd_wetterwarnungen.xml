@@ -12,6 +12,7 @@
 	<namespace path="/">Bakual\Module\Wetterwarnungen</namespace>
 	<files>
 		<folder>Dispatcher</folder>
+		<folder>Field</folder>
 		<folder>Helper</folder>
 		<folder>language</folder>
 		<folder module="mod_dwd_wetterwarnungen">services</folder>
@@ -26,7 +27,7 @@
 	</server>
 	<config>
 		<fields name="params">
-			<fieldset name="basic" label="MOD_DWD_WETTERWARNUNGEN_BASIC_SETTINGS">
+			<fieldset name="basic" addfieldprefix="Bakual\Module\Wetterwarnungen\Site\Field">>
 				<field
 					name="select_station"
 					type="radio"
@@ -40,7 +41,7 @@
 				</field>
 				<field
 					name="station"
-					type="sql"
+					type="station"
 					label="MOD_DWD_WETTERWARNUNGEN_STATION_LABEL"
 					sql_select="id, title"
 					sql_from="#__dwd_wetter_sites"
@@ -56,7 +57,6 @@
 					default="Wächtersbach-Neudorf"
 					label="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_LABEL"
 					description="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_DESC"
-					required="true"
 					showon="select_station:0"
 				/>
 
@@ -66,7 +66,6 @@
 					default="50.264024"
 					label="MOD_DWD_WETTERWARNUNGEN_LATITUDE_LABEL"
 					description="MOD_DWD_WETTERWARNUNGEN_LATITUDE_DESC"
-					required="true"
 					filter="float"
 					showon="select_station:0"
 				/>
@@ -77,7 +76,6 @@
 					default="9.319105"
 					label="MOD_DWD_WETTERWARNUNGEN_LONGITUDE_LABEL"
 					description="MOD_DWD_WETTERWARNUNGEN_LONGITUDE_DESC"
-					required="true"
 					filter="float"
 					showon="select_station:0"
 				/>
