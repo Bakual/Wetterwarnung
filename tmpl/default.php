@@ -123,7 +123,7 @@ $jsLocationname = str_replace("'", "\\'", $jsLocationname);
             // Marker mit Popup hinzufügen
 			<?php if ($params->get('show_marker', 1)): ?>
             const marker = L.marker([lat, lon]).addTo(karte);
-            const popuptext = '<b>' + ortsname + '</b><br>Wetterwarnungen<br>Deutscher Wetterdienst';
+            const popuptext = '<b>' + ortsname + '</b><br><a href="https://www.dwd.de/DE/wetter/warnungen_gemeinden/warnWetter_node.html" target="_blank">Wetterwarnungen</a><br><a href="https://www.dwd.de" target="_blank">Deutscher Wetterdienst</a>';
             marker.bindPopup(popuptext).openPopup();
 			<?php endif; ?>
         }
