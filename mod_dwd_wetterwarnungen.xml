@@ -28,6 +28,39 @@
 		<fields name="params">
 			<fieldset name="basic" label="MOD_DWD_WETTERWARNUNGEN_BASIC_SETTINGS">
 				<field
+					name="select_station"
+					type="radio"
+					default="0"
+					label="MOD_DWD_WETTERWARNUNGEN_SELECT_STATION_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_SELECT_STATION_DESC"
+					layout="joomla.form.field.radio.switcher"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field
+					name="station"
+					type="sql"
+					label="MOD_DWD_WETTERWARNUNGEN_STATION_LABEL"
+					sql_select="id, title"
+					sql_from="#__dwd_wetter_sites"
+					sql_order="title ASC"
+					key_field="id"
+					value_field="title"
+					showon="select_station:1"
+				/>
+
+				<field
+					name="locationname"
+					type="text"
+					default="Wächtersbach-Neudorf"
+					label="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_DESC"
+					required="true"
+					showon="select_station:0"
+				/>
+
+				<field
 					name="latitude"
 					type="text"
 					default="50.264024"
@@ -35,6 +68,7 @@
 					description="MOD_DWD_WETTERWARNUNGEN_LATITUDE_DESC"
 					required="true"
 					filter="float"
+					showon="select_station:0"
 				/>
 
 				<field
@@ -45,15 +79,7 @@
 					description="MOD_DWD_WETTERWARNUNGEN_LONGITUDE_DESC"
 					required="true"
 					filter="float"
-				/>
-
-				<field
-					name="locationname"
-					type="text"
-					default="Wächtersbach-Neudorf"
-					label="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_LABEL"
-					description="MOD_DWD_WETTERWARNUNGEN_LOCATIONNAME_DESC"
-					required="true"
+					showon="select_station:0"
 				/>
 
 				<field

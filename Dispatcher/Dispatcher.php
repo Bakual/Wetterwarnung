@@ -36,6 +36,15 @@ class Dispatcher extends AbstractModuleDispatcher implements HelperFactoryAwareI
 
 		$data['helper'] = $this->getHelperFactory()->getHelper('DwdWetterwarnungenHelper');
 
+		if ($data['params']->get('select_station'))
+		{
+			$id      = $data['params']->get('station');
+			$station = $data['helper']->getStation($id);
+			$data['params']->set('latitude', $station['lat']);
+			$data['params']->set('longitude', $station['long']);
+			$data['params']->set('locationname', $station['title']);
+		}
+
 		return $data;
 	}
 }
