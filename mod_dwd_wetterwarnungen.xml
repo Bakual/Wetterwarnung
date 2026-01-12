@@ -21,6 +21,9 @@
 		<folder>css</folder>
 		<folder>js</folder>
 	</media>
+	<server type="extension" priority="1" name="Bakual.net">
+		https://www.bakual.net/update/mod_dwd_wetterwarnungen.xml
+	</server>
 	<config>
 		<fields name="params">
 			<fieldset name="basic" label="MOD_DWD_WETTERWARNUNGEN_BASIC_SETTINGS">
