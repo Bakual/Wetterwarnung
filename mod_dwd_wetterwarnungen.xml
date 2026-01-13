@@ -2,7 +2,7 @@
 <extension type="module" client="site" method="upgrade">
 	<name>MOD_DWD_WETTERWARNUNGEN</name>
 	<author>Thomas Hunziker</author>
-	<creationDate>2026-01-08</creationDate>
+	<creationDate>2026-01-13</creationDate>
 	<copyright>(C) 2026</copyright>
 	<authorEmail>admin@bakual.net</authorEmail>
 	<authorUrl>https://www.bakual.net</authorUrl>
