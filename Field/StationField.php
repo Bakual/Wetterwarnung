@@ -42,7 +42,7 @@ class StationField extends SqlField
 		$prefix = $db->getPrefix();
 		$tables = $db->getTableList();
 
-		if (in_array($prefix . 'dwd_wetter_sites', $tables))
+		if (!in_array($prefix . 'dwd_wetter_sites', $tables))
 		{
 			return '<span class="alert alert-warning">' . Text::_('MOD_DWD_WETTERWARNUNGEN_WEATHERMODULE_NOT_FOUND') . '</span>';
 		}
