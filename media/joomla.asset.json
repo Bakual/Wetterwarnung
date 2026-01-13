@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_dwd_wetterwarnungen",
+  "version": "1.0.0",
+  "description": "DWD Wetterwarnungen",
+  "license": "GPL-2.0-or-later",
+  "assets": [
+    {
+      "name": "mod_dwd_wetterwarnungen.leaflet",
+      "type": "preset",
+      "dependencies": [
+        "mod_dwd_wetterwarnungen.leaflet#script",
+        "mod_dwd_wetterwarnungen.leaflet#style",
+        "mod_dwd_wetterwarnungen.leaflet-betterwms#script"
+      ]
+    },
+    {
+      "name": "mod_dwd_wetterwarnungen.leaflet",
+      "type": "script",
+      "uri": "mod_dwd_wetterwarnungen/leaflet.js",
+      "dependencies": [
+        "jquery"
+      ]
+    },
+    {
+      "name": "mod_dwd_wetterwarnungen.leaflet-betterwms",
+      "type": "script",
+      "uri": "mod_dwd_wetterwarnungen/leaflet-betterwms.js",
+      "dependencies": [
+        "mod_dwd_wetterwarnungen.leaflet"
+      ]
+    },
+    {
+      "name": "mod_dwd_wetterwarnungen.leaflet",
+      "type": "style",
+      "uri": "mod_dwd_wetterwarnungen/leaflet.css"
+    }
+  ]
+}

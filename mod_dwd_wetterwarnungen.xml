@@ -21,6 +21,7 @@
 	<media destination="mod_dwd_wetterwarnungen" folder="media">
 		<folder>css</folder>
 		<folder>js</folder>
+		<file>joomla.asset.json</file>
 	</media>
 	<server type="extension" priority="1" name="Bakual.net">
 		https://www.bakual.net/update/mod_dwd_wetterwarnungen.xml

@@ -7,6 +7,7 @@
  **/
 
 use Bakual\Module\Wetterwarnungen\Site\Helper\DwdWetterwarnungenHelper;
+use Joomla\CMS\Factory;
 
 defined('_JEXEC') or die;
 
@@ -19,7 +20,19 @@ defined('_JEXEC') or die;
 // Variablen direkt aus dem Dispatcher holen
 $moduleId = 'dwd_wetterwarnungen_' . $module->id;
 
-$helper->loadAssets($params);
+// Assets laden
+$document = Factory::getApplication()->getDocument();
+$wa       = $document->getWebAssetManager();
+$wa->getRegistry()->addExtensionRegistryFile('mod_dwd_wetterwarnungen');
+$wa->usePreset('mod_dwd_wetterwarnungen.leaflet');
+
+// Auto-Refresh Meta-Tag hinzufügen
+if ($interval = $params->get('refresh_interval', 300))
+{
+	$document->addCustomTag(
+			'<meta http-equiv="refresh" content="' . $interval . '">'
+	);
+}
 
 // Escaping für JavaScript-Variablen
 $jsLocationname = htmlspecialchars($params->get('locationname', 'Wächtersbach-Neudorf'), ENT_QUOTES, 'UTF-8');
