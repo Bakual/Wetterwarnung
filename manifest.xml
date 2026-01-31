@@ -5,13 +5,13 @@
 		<description>Joomla! Modul zur Anzeige von DWD Wetterwarnungen</description>
 		<element>mod_dwd_wetterwarnungen</element>
 		<type>module</type>
-		<version>1.0.0</version>
+		<version>1.0.1</version>
 		<client>site</client>
-		<infourl title="DWD Wetterwarnungen">https://github.com/Bakual/Wetterwarnung/releases/tag/1.0.0</infourl>
+		<infourl title="DWD Wetterwarnungen">https://github.com/Bakual/Wetterwarnung/releases/tag/1.0.1</infourl>
 		<downloads>
-			<downloadurl type="full" format="zip">https://github.com/Bakual/Wetterwarnung/archive/refs/tags/1.0.0.zip</downloadurl>
+			<downloadurl type="full" format="zip">https://github.com/Bakual/Wetterwarnung/archive/refs/tags/1.0.1.zip</downloadurl>
 		</downloads>
 		<targetplatform name="joomla" version="6.[01234]"/>
-		<sha256>89120226e630bb188942f61273a214213a2c4924f865128a5289382db3f08911</sha256>
+		<sha256>afbc18fa451482ee0ff40f93a4e8b9787a57957a668c15a1a497bf7fe99abd51</sha256>
 	</update>
 </updates>
