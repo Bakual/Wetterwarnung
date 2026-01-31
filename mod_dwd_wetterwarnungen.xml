@@ -24,9 +24,7 @@
 		<file>joomla.asset.json</file>
 	</media>
 	<updateservers>
-		<server type="extension" priority="1" name="Bakual.net">
-			https://www.bakual.net/update/mod_dwd_wetterwarnungen.xml
-		</server>
+		<server type="extension" priority="1" name="Bakual.net">https://www.bakual.net/update/mod_dwd_wetterwarnungen.xml</server>
 	</updateservers>
 	<config>
 		<fields name="params">
