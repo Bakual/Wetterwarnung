@@ -23,9 +23,11 @@
 		<folder>js</folder>
 		<file>joomla.asset.json</file>
 	</media>
-	<server type="extension" priority="1" name="Bakual.net">
-		https://www.bakual.net/update/mod_dwd_wetterwarnungen.xml
-	</server>
+	<updateservers>
+		<server type="extension" priority="1" name="Bakual.net">
+			https://www.bakual.net/update/mod_dwd_wetterwarnungen.xml
+		</server>
+	</updateservers>
 	<config>
 		<fields name="params">
 			<fieldset name="basic" addfieldprefix="Bakual\Module\Wetterwarnungen\Site\Field">>
