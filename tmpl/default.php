@@ -72,7 +72,6 @@ $jsLocationname = str_replace("'", "\\'", $jsLocationname);
             const lat = <?php echo (float) $params->get('latitude', 50.264024); ?>;
             const lon = <?php echo (float) $params->get('longitude', 9.319105); ?>;
             const zoomf = <?php echo (int) $params->get('zoom', 10); ?>;
-            const maxzoomf = <?php echo (int) $params->get('maxzoom', 18); ?>;
             const ortsname = '<?php echo $jsLocationname; ?>';
             const moduleId = '<?php echo $moduleId; ?>';
 
@@ -87,8 +86,7 @@ $jsLocationname = str_replace("'", "\\'", $jsLocationname);
 
             // OSM-Hintergrundslayer definieren
             const osmlayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data: &copy; <a href="https://openstreetmap.org" target="_blank">OpenStreetMap</a> contributors',
-                maxZoom: maxzoomf
+                attribution: 'Map data: &copy; <a href="https://openstreetmap.org" target="_blank">OpenStreetMap</a> contributors'
             });
 
             // Warnungs-Layer vom DWD-Geoserver
