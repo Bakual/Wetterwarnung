@@ -3,7 +3,7 @@
  * @package     Wetterwarnungen
  * @author      Thomas Hunziker <admin@bakual.net>
  * @copyright   © 2026 - Thomas Hunziker
- * @license     https://www.gnu.org/licenses/gpl.html
+ * @license     https://www.gnu.org/licenses/gpl-3.0.txt
  **/
 
 namespace Bakual\Module\Wetterwarnungen\Site\Dispatcher;
