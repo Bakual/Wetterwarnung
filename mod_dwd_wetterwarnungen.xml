@@ -105,35 +105,25 @@
 				/>
 
 				<field
-					name="width"
-					type="text"
-					default="100%"
-					label="MOD_DWD_WETTERWARNUNGEN_WIDTH_LABEL"
-					description="MOD_DWD_WETTERWARNUNGEN_WIDTH_DESC"
-				/>
+					name="ratio"
+					type="list"
+					label="MOD_DWD_WETTERWARNUNGEN_RATIO_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_RATIO_DESC"
+				>
+					<option value="1x1">1/1</option>
+					<option value="4x3">4/3</option>
+					<option value="16x9">16/9</option>
+					<option value="21x9">21/9</option>
+					<option value="custom">MOD_DWD_WETTERWARNUNGEN_RATIO_OPTION_CUSTOM</option>
+				</field>
 
 				<field
-					name="height"
+					name="custom_ratio"
 					type="text"
-					default="600px"
-					label="MOD_DWD_WETTERWARNUNGEN_HEIGHT_LABEL"
-					description="MOD_DWD_WETTERWARNUNGEN_HEIGHT_DESC"
-				/>
-
-				<field
-					name="maxwidth"
-					type="text"
-					default="900px"
-					label="MOD_DWD_WETTERWARNUNGEN_MAXWIDTH_LABEL"
-					description="MOD_DWD_WETTERWARNUNGEN_MAXWIDTH_DESC"
-				/>
-
-				<field
-					name="bordercolor"
-					type="color"
-					default="#824913"
-					label="MOD_DWD_WETTERWARNUNGEN_BORDERCOLOR_LABEL"
-					description="MOD_DWD_WETTERWARNUNGEN_BORDERCOLOR_DESC"
+					label="MOD_DWD_WETTERWARNUNGEN_CUSTOM_RATIO_LABEL"
+					description="MOD_DWD_WETTERWARNUNGEN_CUSTOM_RATIO_DESC"
+					hint="3/4"
+					showon="ratio:custom"
 				/>
 
 				<field
@@ -144,6 +134,7 @@
 					description="MOD_DWD_WETTERWARNUNGEN_BORDERWIDTH_DESC"
 					validate="number"
 					min="0"
+					max="5"
 				/>
 
 				<field

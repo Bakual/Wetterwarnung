@@ -34,20 +34,30 @@ if ($interval = $params->get('refresh_interval', 300))
 	);
 }
 
+$ratio = htmlspecialchars($params->get('ratio', '1x1'), ENT_QUOTES, 'UTF-8');
+
+if ($ratio != 'custom')
+{
+	$ratioclass = 'ratio ratio-' . $ratio;
+	$style      = '';
+}
+elseif ($customRatio = htmlspecialchars($params->get('custom_ratio', ''), ENT_QUOTES, 'UTF-8'))
+{
+	$ratioclass = 'w-100 position-relative';
+	$style      = 'aspect-ratio:' . $customRatio;
+}
+
+
 // Escaping für JavaScript-Variablen
 $jsLocationname = htmlspecialchars($params->get('locationname', 'Wächtersbach-Neudorf'), ENT_QUOTES, 'UTF-8');
 $jsLocationname = str_replace("'", "\\'", $jsLocationname);
 ?>
-
-<div class="mod-dwdwarn">
+<div id="<?php echo $moduleId; ?>"
+     class="mod-dwdwarn border border-<?php echo (int) $params->get('borderwidth', 3); ?> <?php echo $ratioclass; ?>"
+	 style="<?php echo $style; ?>"
+>
 	<!-- Kartencontainer -->
-	<div
-			id="<?php echo $moduleId; ?>"
-			style="width: <?php echo htmlspecialchars($params->get('width', '100%')); ?>;
-					max-width: <?php echo htmlspecialchars($params->get('maxwidth', '900px')); ?>;
-					height: <?php echo htmlspecialchars($params->get('height', '600px')); ?>;
-					border: <?php echo (int) $params->get('borderwidth', 3); ?>px solid <?php echo htmlspecialchars($params->get('bordercolor')); ?>;"
-	></div>
+	<div id="<?php echo $moduleId; ?>_map" class="w-100 h-100 position-absolute"></div>
 </div>
 
 <script>
@@ -73,7 +83,7 @@ $jsLocationname = str_replace("'", "\\'", $jsLocationname);
             const lon = <?php echo (float) $params->get('longitude', 9.319105); ?>;
             const zoomf = <?php echo (int) $params->get('zoom', 10); ?>;
             const ortsname = '<?php echo $jsLocationname; ?>';
-            const moduleId = '<?php echo $moduleId; ?>';
+            const moduleId = '<?php echo $moduleId; ?>_map';
 
             // Leaflet-Kartenobjekt im referenzierten div erstellen
             const karte = L.map(moduleId, {
