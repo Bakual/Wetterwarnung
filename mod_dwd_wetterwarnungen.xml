@@ -6,7 +6,7 @@
 	<copyright>(C) 2026</copyright>
 	<authorEmail>admin@bakual.net</authorEmail>
 	<authorUrl>https://www.bakual.net</authorUrl>
-	<version>1.0.2</version>
+	<version>1.1.0</version>
 	<license>https://www.gnu.org/licenses/gpl.html</license>
 	<description>MOD_DWD_WETTERWARNUNGEN_XML_DESCRIPTION</description>
 	<namespace path="/">Bakual\Module\Wetterwarnungen</namespace>
