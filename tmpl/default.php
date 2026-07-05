@@ -100,7 +100,7 @@ $jsLocationname = str_replace("'", "\\'", $jsLocationname);
             });
 
             // Warnungs-Layer vom DWD-Geoserver
-            const warnlayer = L.tileLayer.betterWms("https://maps.dwd.de/geoserver/dwd/wms/", {
+            const warnlayer = L.tileLayer.betterWms("https://maps.dwd.de/geoproxy_warnungen/service/", {
                 layers: 'Warnungen_Gemeinden_vereinigt',
                 format: 'image/png',
                 transparent: true,
@@ -109,9 +109,10 @@ $jsLocationname = str_replace("'", "\\'", $jsLocationname);
             });
 
             // Layer mit neutraler Darstellung der Gemeinde-Warngebiete
-            const gemeindelayer = L.tileLayer.wms("https://maps.dwd.de/geoserver/dwd/wms/", {
+            const gemeindelayer = L.tileLayer.wms("https://maps.dwd.de/geoproxy_warnungen/service/", {
                 layers: 'Warngebiete_Gemeinden',
                 format: 'image/png',
+                styles: '',
                 transparent: true,
                 opacity: <?php echo (float) $params->get('opacity_communities', 0.4); ?>,
                 attribution: 'Geobasisdaten Gemeinden: &copy; <a href="https://www.bkg.bund.de" target="_blank">BKG</a> 2015 (Daten verändert)'
