@@ -95,9 +95,10 @@ $jsLocationname = str_replace("'", "\\'", $jsLocationname);
             });
 
             // OSM-Hintergrundslayer definieren
-            const osmlayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data: &copy; <a href="https://openstreetmap.org" target="_blank">OpenStreetMap</a> contributors'
+            const osmlayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                referrerPolicy: 'strict-origin-when-cross-origin', attribution: 'Map data: &copy; <a href="https://openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
             });
+
 
             // Warnungs-Layer vom DWD-Geoserver
             const warnlayer = L.tileLayer.betterWms("https://maps.dwd.de/geoproxy_warnungen/service/", {
