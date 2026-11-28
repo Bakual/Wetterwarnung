@@ -2,11 +2,11 @@
 <extension type="module" client="site" method="upgrade">
 	<name>MOD_DWD_WETTERWARNUNGEN</name>
 	<author>Thomas Hunziker</author>
-	<creationDate>2026-02-06</creationDate>
+	<creationDate>2026-11-28</creationDate>
 	<copyright>(C) 2026</copyright>
 	<authorEmail>admin@bakual.net</authorEmail>
 	<authorUrl>https://www.bakual.net</authorUrl>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<license>https://www.gnu.org/licenses/gpl.html</license>
 	<description>MOD_DWD_WETTERWARNUNGEN_XML_DESCRIPTION</description>
 	<namespace path="/">Bakual\Module\Wetterwarnungen</namespace>
@@ -23,6 +23,7 @@
 		<folder>js</folder>
 		<file>joomla.asset.json</file>
 	</media>
+	<changelogurl>https://www.bakual.net/update/mod_dwd_wetterwarnungen-changelog.xml</changelogurl>
 	<updateservers>
 		<server type="extension" priority="1" name="Bakual.net">https://www.bakual.net/update/mod_dwd_wetterwarnungen.xml</server>
 	</updateservers>
